@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t jayonojah/frontend -f Dockerfile.dev .
+  - docker build -t jayonojah/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run jayonojah/frontend npm run test -- --coverage
+  - docker run -e CI=true USERNAME/docker-react npm run test
